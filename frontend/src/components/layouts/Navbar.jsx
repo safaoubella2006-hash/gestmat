@@ -1,45 +1,72 @@
+import {
+  FiBell,
+  FiSearch,
+  FiChevronDown,
+} from "react-icons/fi";
+
 function Navbar() {
   return (
-    <header className="h-20 bg-white border-b border-[#F1D7DE] px-8 flex items-center justify-between">
+    <header className="h-20 bg-white border-b border-[#DDD6CE] px-8 flex items-center justify-between">
 
       {/* Left */}
       <div>
-        <h2 className="text-3xl font-bold text-[#5E4B56]">
+        <h2 className="text-3xl font-bold text-[#2F2F2F]">
           Dashboard
         </h2>
+
+        <p className="text-sm text-gray-500">
+          Bienvenue sur GestMat
+        </p>
       </div>
 
       {/* Right */}
       <div className="flex items-center gap-6">
 
         {/* Search */}
-        <input
-          type="text"
-          placeholder="Rechercher..."
-          className="w-72 px-5 py-2 rounded-full bg-[#FFF6F8] border border-[#F3D9E0] outline-none focus:ring-2 focus:ring-[#E8B8C7] transition"
-        />
+        <div className="relative">
+
+          <FiSearch
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+            size={18}
+          />
+
+          <input
+            type="text"
+            placeholder="Rechercher..."
+            className="pl-11 pr-5 py-3 w-80 rounded-full border border-[#DDD6CE] bg-[#F8F6F2] outline-none focus:ring-2 focus:ring-[#A67C52]"
+          />
+
+        </div>
 
         {/* Notification */}
-        <button className="w-11 h-11 rounded-full bg-[#FFF6F8] hover:bg-[#F6DDE3] transition flex items-center justify-center text-xl">
-          🔔
+        <button className="relative w-12 h-12 rounded-full bg-[#F8F6F2] flex items-center justify-center hover:bg-[#ECE6DF] transition">
+
+          <FiBell size={20} />
+
+          <span className="absolute top-3 right-3 w-2 h-2 bg-[#A67C52] rounded-full"></span>
+
         </button>
 
-        {/* Profile */}
-        <div className="flex items-center gap-3">
+        {/* Avatar */}
+        <div className="flex items-center gap-3 cursor-pointer">
 
-          <div className="w-11 h-11 rounded-full bg-[#E8B8C7] text-white font-bold flex items-center justify-center">
+          <div className="w-12 h-12 rounded-full bg-[#A67C52] text-white flex items-center justify-center text-lg font-bold">
             S
           </div>
 
-          <div className="flex flex-col">
-            <span className="font-semibold text-[#5E4B56]">
-              Bonjour, Safae 👋
-            </span>
+          <div>
 
-            <span className="text-sm text-gray-500">
+            <h4 className="font-semibold text-[#2F2F2F]">
+              Safae
+            </h4>
+
+            <p className="text-sm text-gray-500">
               Administratrice
-            </span>
+            </p>
+
           </div>
+
+          <FiChevronDown className="text-gray-500" />
 
         </div>
 
